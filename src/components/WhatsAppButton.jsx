@@ -16,9 +16,9 @@ export default function WhatsAppButton() {
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1.4, type: 'spring', stiffness: 200, damping: 16 }}
-      className={`group fixed end-4 z-[70] flex items-center gap-3 transition-[bottom] duration-500 md:bottom-8 md:end-8 ${trayVisible ? 'bottom-[160px]' : 'bottom-24'}`}
+      className={`group fixed end-4 z-[70] flex items-center transition-[bottom] duration-500 md:bottom-8 md:end-8 ${trayVisible ? 'bottom-[160px]' : 'bottom-24'}`}
     >
-      <span className="glass-strong pointer-events-none hidden rounded-full px-4 py-2 text-xs opacity-0 transition-all duration-500 group-hover:opacity-100 md:block">
+      <span className="glass-strong pointer-events-none absolute end-full top-1/2 me-3 hidden -translate-y-1/2 whitespace-nowrap rounded-full px-4 py-2 text-xs opacity-0 transition-opacity duration-500 group-hover:opacity-100 md:block">
         {t('wa.label')}
       </span>
       <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#1f9d55] text-white shadow-[0_10px_30px_-8px_rgba(31,157,85,0.7)] ring-1 ring-gold-300/60">

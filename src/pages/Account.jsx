@@ -20,6 +20,7 @@ const TIERS = [
 const COUNTRIES = ['UAE', 'KSA', 'Qatar', 'Kuwait', 'Bahrain', 'Oman']
 
 function VipCard({ tier, name }) {
+  const { t } = useTranslation()
   return (
     <div className={`relative aspect-[1.6/1] w-full max-w-md overflow-hidden rounded-3xl bg-gradient-to-br ${tier.grad} p-6 shadow-gold ${tier.text}`} dir="ltr">
       <div className="absolute -end-10 -top-10 h-48 w-48 rounded-full border border-current opacity-20" />
@@ -31,9 +32,9 @@ function VipCard({ tier, name }) {
           <Crown className="h-6 w-6" strokeWidth={1.2} />
         </div>
         <div>
-          <p className="text-[10px] uppercase tracking-luxe opacity-70">Private Client</p>
+          <p className="text-[10px] uppercase tracking-luxe opacity-70" dir="auto">{t('account.eyebrow')}</p>
           <p className="mt-1 font-display text-2xl">{name}</p>
-          <p className="mt-2 text-xs uppercase tracking-luxe">{tier.id} tier</p>
+          <p className="mt-2 text-xs uppercase tracking-luxe" dir="auto">{t('account.tierLabel', { tier: t(`account.tiers.${tier.id.toLowerCase()}`) })}</p>
         </div>
       </div>
     </div>
